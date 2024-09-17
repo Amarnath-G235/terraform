@@ -1,7 +1,8 @@
 #Creating EC-2 instance using terraform
 
 resource "aws_instance" "terraform" {
-    count = 3
+    # Length function will automatically adjust the list of instances which is defined in the variable called "instance_names" so that we don't need to give a numeric value 
+    count = length(var.instance_names)
     ami = "ami-09c813fb71547fc4f"
     instance_type = "t3.micro"
     vpc_security_group_ids = [aws_security_group.allow_ssh_terraform.id]
