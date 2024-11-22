@@ -11,7 +11,10 @@ variable "instance_type" {
 variable "tags" {
     type = map
     default = {
-        Name = "terraform"
+        Name = "Backend"
+        Environment = "DEV"
+        Project = "Expense"
+        DevOps_Engineer = "Amarnath"
     }
 }
 

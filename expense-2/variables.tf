@@ -11,3 +11,13 @@ variable "common_tags" {
         Terraform = "true"
     }
 }
+
+variable "zone_id" {
+    default = "Z1011040F14N5MVPIIUV"
+    type    = string
+}
+
+variable "domain_name" {
+    default = "ukom81s.online"
+    type    = string
+}
