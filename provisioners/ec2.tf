@@ -16,12 +16,12 @@ resource "aws_instance" "terraform" {
         password = "DevOps321"
         host     = self.public_ip
     }
-    # provisioners will execute at the time of resource creation 
+# provisioners will execute at the time of resource creation 
     provisioner "remote-exec" {
         inline = [
             "sudo dnf install ansible -y",
             "sudo dnf install nginx -y",
-            "sudo dnf install start nginx -y"
+            "sudo systemctl start nginx"
         ]
     }
 }
